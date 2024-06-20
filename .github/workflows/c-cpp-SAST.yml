@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: cppcheck
-      run: cppcheck -i config/tests .
+      run: cppcheck -i config/tests --quiet .
