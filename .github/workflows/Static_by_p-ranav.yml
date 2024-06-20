@@ -1,6 +1,8 @@
 name: Static analysis
 
 on: [pull_request]
+  workflow_dispatch:
+
 
 jobs:
   static_analysis:
