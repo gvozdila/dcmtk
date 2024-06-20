@@ -1,4 +1,4 @@
-name: C/C++  SAST
+name: C/C++  SAST with cppcheck
 
 on:
   push:
@@ -7,20 +7,12 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  cpp-check:
 
     #runs-on: ubuntu-latest
     runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v4
-    - name: pwd-ls
-      run: pwd && ls
-    #- name: configure
-    #  run: cmake .
-    #- name: make
-    #  run: make
-    #- name: make check
-    #  run: make check
-    #- name: make distcheck
-    #  run: make distcheck
+    - name: cppcheck
+      run: cppcheck -i config/tests .
